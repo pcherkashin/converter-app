@@ -9,6 +9,7 @@ import LengthConverter from './../components/feet'
 import InchConverter from './../components/inches'
 import SquareConverter from './../components/square'
 import OunceConverter from './../components/ounces'
+import CurrencyConverter from './../components/currency'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
 
+      < CurrencyConverter />
       < TempConverter />
       < VolConverter />
       < WeightConverter />

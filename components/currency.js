@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from '@/styles/Component.module.css'
 
 export default function CurrencyConverter() {
   const [rub, setRub] = React.useState(0);

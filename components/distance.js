@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '@/styles/Component.module.css'
 
 //!Add values validation >=0
 //!Add default values
@@ -22,26 +23,31 @@ export default function DistConverter() {
   };
 
   return (
-    <div>
-      <form>
+    <div className={styles.container}>
+      <div className={styles.column}>
+      <label htmlFor="fahrenheit" className={styles.label}>Miles</label>
+        
         <input
+          className={styles.input}
           type="number"
           id="cur1"
           placeholder="0.00"
           value={far}
           onChange={handleFarChange}
         />
-        Miles
-        <br />
+        </div>
+        <div className={styles.column}>
+        <label htmlFor="celsius" className={styles.label}>Kilometers</label>
         <input
+          className={styles.input}
           type="number"
           id="cur2"
           placeholder="0.00"
           value={cel}
           onChange={handleCelChange}
         />
-        Kilometers
-      </form>
+      </div>
     </div>
-  );
+  )
 }
+

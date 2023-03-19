@@ -21,6 +21,7 @@ export default function TempConverter() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.row}>
       <div className={styles.column}>
       <label htmlFor="fahrenheit" className={styles.label}>Fahrenheit</label>
         
@@ -44,6 +45,7 @@ export default function TempConverter() {
           onChange={handleCelChange}
         />
       </div>
+    </div>
     </div>
   )
 }

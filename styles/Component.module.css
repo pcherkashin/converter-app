@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   
   .column {
@@ -29,5 +29,14 @@
     text-align: center;
     width: 100%;
     max-width: 300px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
   }
   

@@ -2,8 +2,8 @@ import React from 'react'
 import styles from '@/styles/Component.module.css'
 
 export default function TempConverter() {
-  const [far, setFar] = React.useState(0)
-  const [cel, setCel] = React.useState(0)
+  const [far, setFar] = React.useState('')
+  const [cel, setCel] = React.useState('')
 
   const handleFarChange = (event) => {
     const farValue = event.target.value
@@ -19,6 +19,10 @@ export default function TempConverter() {
     setFar(setValue.toFixed(2))
   }
 
+  const handleFocus = (e) => {
+    e.target.select();
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.column}>
@@ -31,6 +35,7 @@ export default function TempConverter() {
           placeholder="0.00"
           value={far}
           onChange={handleFarChange}
+          onFocus={handleFocus}
         />
         </div>
         <div className={styles.column}>
@@ -42,6 +47,7 @@ export default function TempConverter() {
           placeholder="0.00"
           value={cel}
           onChange={handleCelChange}
+          onFocus={handleFocus}
         />
       </div>
     </div>

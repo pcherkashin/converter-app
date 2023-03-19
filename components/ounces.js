@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from '@/styles/Component.module.css'
 
-export default function VolConverter() {
-    const [val1, setVal1] = React.useState(0)
+export default function OunceConverter() {
+  const [val1, setVal1] = React.useState(0)
     const [val2, setVal2] = React.useState(0)
     const [val1Error, setVal1Error] = React.useState(false)
     const [val2Error, setVal2Error] = React.useState(false)
@@ -14,7 +14,7 @@ export default function VolConverter() {
       } else {
       setVal1Error(false)
       setVal1(val1Value)
-    const setValue = (val1Value * 3.78541)    // liters = gallons * 3.78541
+    const setValue = (val1Value * 28.3495)    // 1 ounce = 28.3495 grams
     setVal2(setValue.toFixed(2))
   }
 }
@@ -26,7 +26,7 @@ export default function VolConverter() {
     } else {
       setVal2Error(false)
     setVal2(val2Value)
-    const setValue = (val2Value / 3.78541) // gallons = liters / 3.78541
+    const setValue = (val2Value / 28.35) // ounces = grams / 28.35
     setVal1(setValue.toFixed(2)); 
   }
 }
@@ -38,7 +38,7 @@ export default function VolConverter() {
   return (
     <div className={styles.container}>
       <div className={styles.column}>
-      <label htmlFor="val1" className={styles.label}>Gallons</label>
+      <label htmlFor="val1" className={styles.label}>Ounces</label>
         
         <input
           className={styles.input}
@@ -53,7 +53,7 @@ export default function VolConverter() {
         />
         </div>
         <div className={styles.column}>
-        <label htmlFor="val2" className={styles.label}>Litres</label>
+        <label htmlFor="val2" className={styles.label}>Grams</label>
         <input
           className={styles.input}
           type="number"

@@ -6,6 +6,9 @@ import TempConverter from './../components/temperature'
 import DistConverter from './../components/distance'
 import VolConverter from './../components/gallons'
 import WeightConverter from './../components/pounds'
+import LengthConverter from './../components/feet'
+import InchConverter from './../components/inches'
+import SquareConverter from './../components/square'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +27,9 @@ export default function Home() {
       < DistConverter />
       < VolConverter />
       < WeightConverter />
+      < LengthConverter />
+      < InchConverter />
+      < SquareConverter />
 
       </main>
     </>

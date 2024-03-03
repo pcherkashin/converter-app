@@ -18,22 +18,38 @@ export default function Home() {
     <>
       <Head>
         <title>Units Converter</title>
-        <meta name="description" content="Units Converter" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='description' content='Units Converter' />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
-
-      < CurrencyConverter />
-      < TempConverter />
-      < VolConverter />
-      < WeightConverter />
-      < OunceConverter />
-      < DistConverter />
-      < LengthConverter />
-      < InchConverter />
-      < SquareConverter />
-
+        <div className={styles.componentContainer}>
+          <CurrencyConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <TempConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <VolConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <WeightConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <OunceConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <DistConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <LengthConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <InchConverter />
+        </div>
+        <div className={styles.componentContainer}>
+          <SquareConverter />
+        </div>
       </main>
     </>
   )

@@ -1,10 +1,22 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 4rem 1rem; /* Adjusted padding for a cleaner look */
-  min-height: 100vh; /* Changed to full viewport height for a more spacious layout */
+  padding: 2rem; /* Adjusted padding for a cleaner look */
+  min-height: 100vh;
+  gap: 20px; /* Changed to full viewport height for a more spacious layout */
+}
+
+.componentContainer {
+  background-color: #fff; /* Adjust background color as needed */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside the container */
+  margin: 10px 0; /* Margin for spacing between components */
+  max-width: 600px; /* Maximum width */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .description {

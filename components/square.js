@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import styles from '@/styles/Component.module.css'
 
 export default function SquareConverter() {
-  const [val1, setVal1] = React.useState(0)
-  const [val2, setVal2] = React.useState(0)
+  const [val1, setVal1] = React.useState('')
+  const [val2, setVal2] = React.useState('')
   const [val1Error, setVal1Error] = React.useState(false)
   const [val2Error, setVal2Error] = React.useState(false)
 
@@ -12,12 +12,12 @@ export default function SquareConverter() {
     if (val1Value < 0) {
       setVal1Error(true)
     } else {
-    setVal1Error(false)
-    setVal1(val1Value)
-    const setValue = (val1Value * 0.404686)    // hectares = acres * 0.404686
-    setVal2(setValue.toFixed(2))
+      setVal1Error(false)
+      setVal1(val1Value)
+      const setValue = val1Value * 0.404686 // hectares = acres * 0.404686
+      setVal2(setValue.toFixed(2))
+    }
   }
-}
 
   const handleVal2Change = (event) => {
     const val2Value = event.target.value
@@ -25,11 +25,11 @@ export default function SquareConverter() {
       setVal2Error(true)
     } else {
       setVal2Error(false)
-    setVal2(val2Value)
-    const setValue = (val2Value * 2.47105) // acres = hectares * 2.47105
-    setVal1(setValue.toFixed(2)); 
+      setVal2(val2Value)
+      const setValue = val2Value * 2.47105 // acres = hectares * 2.47105
+      setVal1(setValue.toFixed(2))
+    }
   }
-}
 
   const handleFocus = (e) => {
     e.target.select()
@@ -38,29 +38,33 @@ export default function SquareConverter() {
   return (
     <div className={styles.container}>
       <div className={styles.column}>
-      <label htmlFor="val1" className={styles.label}>Acres</label>
-        
+        <label htmlFor='val1' className={styles.label}>
+          Acres
+        </label>
+
         <input
           className={styles.input}
-          type="number"
-          id="val1"
-          placeholder="0.00"
+          type='number'
+          id='val1'
+          placeholder='0.00'
           value={val1}
-          min="0"
+          min='0'
           required
           onChange={handleVal1Change}
           onFocus={handleFocus}
         />
-        </div>
-        <div className={styles.column}>
-        <label htmlFor="val2" className={styles.label}>Hectares</label>
+      </div>
+      <div className={styles.column}>
+        <label htmlFor='val2' className={styles.label}>
+          Hectares
+        </label>
         <input
           className={styles.input}
-          type="number"
-          id="val2"
-          placeholder="0.00"
+          type='number'
+          id='val2'
+          placeholder='0.00'
           value={val2}
-          min="0"
+          min='0'
           required
           onChange={handleVal2Change}
           onFocus={handleFocus}

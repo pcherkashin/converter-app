@@ -4,6 +4,8 @@ import styles from '@/styles/Component.module.css'
 export default function CurrencyConverter() {
   const [uah, setUah] = useState('')
   const [usd, setUsd] = useState('')
+  const [isUahNegative, setIsUahNegative] = useState(false)
+  const [isUsdNegative, setIsUsdNegative] = useState(false)
   const [rates, setRates] = useState({})
 
   useEffect(() => {
@@ -22,58 +24,62 @@ export default function CurrencyConverter() {
   }, [])
 
   const handleUahChange = (event) => {
+    const value = parseFloat(event.target.value)
     setUah(event.target.value)
-    if (event.target.value < 0) {
-      alert('Value must be greater than or equal to 0')
-      return
+    setIsUahNegative(value < 0)
+    if (value >= 0) {
+      setUsd((value / rates.UAH).toFixed(2))
     }
-    setUsd((event.target.value / rates.UAH).toFixed(2))
   }
 
   const handleUsdChange = (event) => {
+    const value = parseFloat(event.target.value)
     setUsd(event.target.value)
-    if (event.target.value < 0) {
-      alert('Value must be greater than or equal to 0')
-      return
+    setIsUsdNegative(value < 0)
+    if (value >= 0) {
+      setUah((value * rates.UAH).toFixed(2))
     }
-    setUah((event.target.value * rates.UAH).toFixed(2))
   }
 
   const handleFocus = (e) => {
     e.target.select()
   }
 
+  // Function to dynamically set input style
+  const getInputStyle = (isNegative) => ({
+    borderColor: isNegative ? 'red' : '',
+    boxShadow: isNegative ? '0 0 0 4px rgba(255, 0, 0, 0.3)' : '',
+    color: isNegative ? 'red' : '',
+  })
+
   return (
     <div className={styles.container}>
       <div className={styles.column}>
-        <label htmlFor='val1' className={styles.label}>
+        <label htmlFor='uah' className={styles.label}>
           UAH
         </label>
-
         <input
           className={styles.input}
           type='number'
           id='uah'
-          placeholder='0.00'
+          style={getInputStyle(isUahNegative)}
+          placeholder={isUahNegative ? 'Value must be > 0' : '0.00'}
           value={uah}
-          min='0'
-          required
           onChange={handleUahChange}
           onFocus={handleFocus}
         />
       </div>
       <div className={styles.column}>
-        <label htmlFor='val2' className={styles.label}>
+        <label htmlFor='usd' className={styles.label}>
           USD
         </label>
         <input
           className={styles.input}
           type='number'
           id='usd'
-          placeholder='0.00'
+          style={getInputStyle(isUsdNegative)}
+          placeholder={isUsdNegative ? 'Value must be > 0' : '0.00'}
           value={usd}
-          min='0'
-          required
           onChange={handleUsdChange}
           onFocus={handleFocus}
         />

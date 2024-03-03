@@ -11,6 +11,8 @@ import SquareConverter from './../components/square'
 import OunceConverter from './../components/ounces'
 import CurrencyConverter from './../components/currency'
 
+import Footer from './../components/footer'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -50,6 +52,8 @@ export default function Home() {
         <div className={styles.componentContainer}>
           <SquareConverter />
         </div>
+        <hr />
+        <Footer />
       </main>
     </>
   )

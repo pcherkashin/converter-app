@@ -1,0 +1,35 @@
+.footer {
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Changed to column to stack items vertically */
+  justify-content: center;
+  align-items: center; /* Center alignment */
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center; /* Ensure links are centered */
+  align-items: center;
+  margin-top: 20px; /* Add some space between the text and icons */
+}
+
+.footer-links a {
+  margin: 0 15px; /* Increase spacing between icons */
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f0f0f0;
+}

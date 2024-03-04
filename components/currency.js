@@ -27,7 +27,8 @@ export default function CurrencyConverter() {
     const value = parseFloat(event.target.value)
     setUah(event.target.value)
     setIsUahNegative(value < 0)
-    if (value >= 0) {
+    if (value === '' || isNaN(value)) setUsd('')
+    else if (value >= 0) {
       setUsd((value / rates.UAH).toFixed(2))
     }
   }
@@ -36,7 +37,8 @@ export default function CurrencyConverter() {
     const value = parseFloat(event.target.value)
     setUsd(event.target.value)
     setIsUsdNegative(value < 0)
-    if (value >= 0) {
+    if (value === '' || isNaN(value)) setUah('')
+    else if (value >= 0) {
       setUah((value * rates.UAH).toFixed(2))
     }
   }
